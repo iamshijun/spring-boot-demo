@@ -1,7 +1,6 @@
 package com.kibou;
 
 import org.springframework.boot.SpringApplication;
-import org.springframework.boot.Banner.Mode;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
@@ -34,11 +33,14 @@ public class Example {
 	}
 
 	public static void main(String[] args) throws Exception {
-		 SpringApplication.run(Example.class, args);
+		// SpringApplication.run(Example.class, args);
+		
 		//or
-		/*SpringApplication sa = new SpringApplication(Example.class);
-		sa.setBannerMode(Mode.OFF);//customize banner mode
-		sa.run(args);*/
+		
+		SpringApplication sa = new SpringApplication(Example.class);
+		//sa.setBannerMode(Mode.OFF);// customize banner mode
+		sa.setWebEnvironment(false);
+		sa.run(args);
 	}
 
 }
