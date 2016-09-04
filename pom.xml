@@ -39,5 +39,6 @@
 		<module>spring-boot-redis-demo</module>
 		<module>spring-boot-mongo-demo</module>
 		<module>spring-boot-mybatis-demo</module>
+		<module>spring-boot-jdbc-demo</module>
 	</modules>
 </project>
