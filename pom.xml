@@ -3,7 +3,8 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.kibo</groupId>
 	<artifactId>spring-boot-demo</artifactId>
-	<packaging>jar</packaging>
+	<packaging>pom</packaging>
+	
 	<version>1.0-SNAPSHOT</version>
 	<name>spring-boot-demo</name>
 	<url>http://maven.apache.org</url>
@@ -13,40 +14,30 @@
 		<artifactId>spring-boot-starter-parent</artifactId>
 		<version>1.4.0.RELEASE</version>
 	</parent>
-	<!-- spring-boot-starter 核心模块，包括自动配置支持、日志和YAML -->
+	
 	<properties>
-		<java.version>1.8</java.version>
+		<java.version>1.7</java.version>
 	</properties>
-
+	
 	<dependencies>
+		<!-- spring-boot-starter 核心模块，包括自动配置支持、日志和YAML -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-web</artifactId>
+			<artifactId>spring-boot-starter</artifactId>
 		</dependency>
-		<!-- 测试模块，包括JUnit、Hamcrest、Mockito -->
 		<dependency>
-	        <groupId>org.springframework.boot</groupId>
-	        <artifactId>spring-boot-starter-test</artifactId>
-	        <scope>test</scope>
-	    </dependency>
-	    <!-- classpath中有文件变化的话,重启服务!如果正在使用JRebel会自动disable devtool -->
-		<!-- <dependency>
 			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-devtools</artifactId>
-		</dependency> -->
+			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope>
+		</dependency>
+	
 	</dependencies>
 
-	<build>
-		<!-- mvn package -->
-		<plugins>
-			<plugin>
-				<groupId>org.springframework.boot</groupId>
-				<artifactId>spring-boot-maven-plugin</artifactId>
-				<configuration>
-					<mainClass>com.kibou.Example</mainClass>
-				</configuration>
-				<!-- 如果有main方法的类只有一个的话 可以不配置configuration-->
-			</plugin>
-		</plugins>
-	</build>
+	<modules>
+		<module>spring-boot-jpa-demo</module>
+		<module>spring-boot-simple-demo</module>
+		<module>spring-boot-redis-demo</module>
+		<module>spring-boot-mongo-demo</module>
+		<module>spring-boot-mybatis-demo</module>
+	</modules>
 </project>
