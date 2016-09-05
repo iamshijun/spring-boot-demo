@@ -13,13 +13,13 @@ import org.springframework.context.annotation.Primary;
 @EnableConfigurationProperties(DefaultDataSourceProperties.class)
 public class DataSourceConfig {
 
+	/*
+	 * 这里和下面的区别就是这里先build完返回后 有具体的ConfiguationProperties对应的PostProcessor对返回的bean再次进行属性设置 (postBeforeInitialization)
+	 * 另外 好处是不用再次创建对应前缀的ConfigurationProperties注解的配置类
+	 */
 	@Bean
 	@ConfigurationProperties(prefix="spring.datasource.secondary")
 	public DataSource secondaryDataSource(){
-		/*这里和下面的区别就是这里先build完返回后 有具体的ConfiguationProperties对应的PostProcessor对返回的bean再次进行属性设置 (postBeforeInitialization)
-		 *这里的好处是不用再次创建对应前缀的ConfigurationProperties注解的配置类
-		 */
-		
 		return DataSourceBuilder.create().build();
 	}
 	

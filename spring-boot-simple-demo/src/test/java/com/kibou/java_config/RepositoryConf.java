@@ -24,8 +24,8 @@ public class RepositoryConf {
 	static class ResourceConf {
 		
 		public ResourceConf(PersonRepository repository) {//@Autowired
-			System.out.println("WebAppConf.ResourceConf.ResourceConf()..");
-			System.out.println("PersonRepository" + repository); //这里如果@Configuration存在含有参数的构造函数,参数会在beanFactory中查找
+			logger.info("ResourceConf.<init>(PersonRepository)..");
+			logger.info("PersonRepository" + repository); //这里如果@Configuration存在含有参数的构造函数,参数会在beanFactory中查找
 		}
 	}
 }

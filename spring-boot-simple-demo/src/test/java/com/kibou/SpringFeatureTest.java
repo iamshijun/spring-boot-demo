@@ -9,8 +9,6 @@ import org.springframework.core.annotation.AliasFor;
 
 import com.kibou.java_config.RepositoryConf;
 
-//@ContextConfiguration
-//@Configuration
 public class SpringFeatureTest {
 	
 	@Test
@@ -29,5 +27,4 @@ public class SpringFeatureTest {
 		AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(RepositoryConf.class);
 		context.close();
 	}
-	
 }

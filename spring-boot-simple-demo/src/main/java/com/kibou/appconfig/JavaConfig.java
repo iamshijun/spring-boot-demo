@@ -20,6 +20,7 @@ public class JavaConfig {
 	}
 	
 	//可以看到serviceB,C的创建都是用到了serviceA,并使用方法调用的方式而不是通过参数注入的
+	//但是并不会直接调用这里的serviceA()方法,spring会创建一个JavaConfig的代理(using CGlib)....
 	@Bean
 	public FooService serviceB(){
 		return new FooService(serviceA());
