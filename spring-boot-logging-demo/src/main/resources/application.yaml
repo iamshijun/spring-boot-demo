@@ -6,3 +6,9 @@ logging:
 #    level: 
 #        root: INFO
 #        com.kibou: TRACE
+
+
+spring:
+    profiles:
+        active: dev
+#application.properties中添加属性：spring.profiles.active=dev（默认激活application-dev.properties配置）

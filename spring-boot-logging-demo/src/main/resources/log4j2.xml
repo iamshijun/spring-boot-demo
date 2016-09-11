@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<configuration status="OFF">
+<!-- 具体log4j配置移步 http://logging.apache.org/log4j/2.x/manual/configuration.html -->
+<configuration status="OFF" monitorInterval="30">
+	<properties>
+		<property name="logfilename">spring.log</property>
+	</properties>
 	<appenders>
 		<Console name="console" target="SYSTEM_OUT">
 			<!-- %class 真正调用logger方法的地方/类加上%L就能确定 输出/调用的确切位置
@@ -9,7 +13,8 @@
 			<PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss.SSS} %-5level --- [%10t] %class:%L - %m%n" />
 			<!-- <ThresholdFilter level onMatch onMismatch/> 过滤指定level的时间-->
 		</Console>
-		<File name="file" fileName="spring.log" append="false">
+
+		<File name="file" fileName="${logfilename}" append="false">
 			<!-- %L line, %m method -->
 			<PatternLayout
 				pattern="%d{HH:mm:ss.SSS} [%10t] %-5level %class{36} %L %M - %msg%xEx%n" />
@@ -19,6 +24,7 @@
 			<PatternLayout
 				pattern="%d{yyyy.MM.dd 'at' HH:mm:ss z} %-5level %class{36} %L %M - %msg%xEx%n" />
 			<SizeBasedTriggeringPolicy size="100 MB" />
+			<!-- TimeBasedTriggeringPolicy -->
 		</RollingFile>
 
 	</appenders>
@@ -28,7 +34,8 @@
 		<root level="INFO">
 			<appender-ref ref="console" />
 		</root>
-		<logger name="com.kibou" level="DEBUG" additivity="false">
+		<!-- loggin.level.com.kibou  在application-dev.yaml中设置 -->
+		<logger name="com.kibou" level="${loggin.level.com.kibou}" additivity="false">
 			<appender-ref ref="console" />
 			<appender-ref ref="file" />
 		</logger>
