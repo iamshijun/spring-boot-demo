@@ -1,0 +1,5 @@
+14:57:03.625 [      main] INFO  org.springframework.boot.StartupInfoLogger 48 logStarting - Starting Application on SHISJ419 with PID 4340 (F:\my_workspace\spring-boot-demo\spring-boot-logging-demo\target\classes started by Administrator in F:\my_workspace\spring-boot-demo\spring-boot-logging-demo)
+14:57:03.628 [      main] DEBUG org.springframework.boot.StartupInfoLogger 51 logStarting - Running with Spring Boot v1.4.0.RELEASE, Spring v4.3.2.RELEASE
+14:57:03.628 [      main] INFO  org.springframework.boot.SpringApplication 659 logStartupProfileInfo - No active profile set, falling back to default profiles: default
+14:57:04.531 [      main] INFO  org.springframework.boot.StartupInfoLogger 57 logStarted - Started Application in 1.269 seconds (JVM running for 2.299)
+14:57:04.532 [      main] DEBUG com.kibou.Application 17 main - Application is running

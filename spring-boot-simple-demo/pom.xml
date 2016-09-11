@@ -15,8 +15,8 @@
 		</dependency>
 	</dependencies>
 	
+	
 	<build>
-		<build>
 		<!-- mvn package -->
 		<plugins>
 			<plugin>
@@ -28,6 +28,5 @@
 				<!-- 如果有main方法的类只有一个的话 可以不配置configuration-->
 			</plugin>
 		</plugins>
-	</build>
 	</build>
 </project>

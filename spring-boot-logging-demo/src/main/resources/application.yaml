@@ -1,0 +1,8 @@
+## if logging.file is specified, logging.path will be ignored
+## if logging.file is not specfied ,  ${logging.path}/spring.log will be create
+logging:
+    path: /var/log/
+#    file: spring-boot-demo.log
+#    level: 
+#        root: INFO
+#        com.kibou: TRACE
