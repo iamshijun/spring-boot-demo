@@ -1,7 +1,8 @@
 package com.kibou;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.boot.SpringApplication;
-import org.springframework.boot.Banner.Mode;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
@@ -27,6 +28,8 @@ public class Application {
 	 * package.
 	 */
 
+	private static Logger logger = LoggerFactory.getLogger(Application.class);
+	
 	public static void main(String[] args) throws Exception {
 		// SpringApplication.run(Application.class, args);
 		
@@ -36,25 +39,7 @@ public class Application {
 //		sa.setBannerMode(Mode.OFF);// customize banner mode , 或者在配置文件中 设置 spring.main.bannerMode=off
 		sa.setWebEnvironment(false);//如果有引入sprong-boot-starter-web默认就会以web形式启动,可以强制设置以普通应用的形式启动
 		sa.run(args);
+		
+		logger.info("Application is running...");
 	}
-
-	
-	/*
-	 * @SpringBootApplication is a convenience annotation that adds all of the
-	 * following:
-	 * 
-	 * @Configuration tags the class as a source of bean definitions for the
-	 * application context.
-	 * 
-	 * @EnableAutoConfiguration tells Spring Boot to start adding beans based on
-	 * classpath settings, other beans, and various property settings. Normally
-	 * you would add @EnableWebMvc for a Spring MVC app, but Spring Boot adds it
-	 * automatically when it sees spring-webmvc on the classpath. This flags the
-	 * application as a web application and activates key behaviors such as
-	 * setting up a DispatcherServlet.
-	 * 
-	 * @ComponentScan tells Spring to look for other components, configurations,
-	 * and services in the the hello package, allowing it to find the
-	 * HelloController.
-	 */
 }
