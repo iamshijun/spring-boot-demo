@@ -34,7 +34,7 @@ public class SpringBootDataRedisTest{
 	}
 	
 	@Test
-	public void tesRedisValueSerializer(){
+	public void testRedisValueSerializer(){
 		User newUser = User.create(1L, "iamshijun", 27);
 		String key = "springboot:data:redis:cache:user:" + newUser.getId();
 		userRedisTemplate.opsForValue().set(key, newUser);
