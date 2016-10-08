@@ -41,5 +41,6 @@
 		<module>spring-boot-mybatis-demo</module>
 		<module>spring-boot-jdbc-demo</module>
 		<module>spring-boot-logging-demo</module>
+		<module>spring-boot-cache-demo</module>
 	</modules>
 </project>

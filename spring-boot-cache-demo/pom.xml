@@ -1,0 +1,40 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>com.kibo</groupId>
+		<artifactId>spring-boot-demo</artifactId>
+		<version>1.0-SNAPSHOT</version>
+	</parent>
+	<artifactId>spring-boot-cache-demo</artifactId>
+
+	<dependencies>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+    		<artifactId>spring-boot-starter-data-jpa</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-cache</artifactId>
+		</dependency>
+		
+		<!-- 
+		    注意到检测使用哪种类型的CacheManager => CacheConfigurationImportSelector根据CacheType的声明顺序尝试根据当前环境来
+		    初始化/创建CacheManager => CacheConfigurations.getConfigurationClass(types[i])
+		     这里需要注释ehcache,才能使用到redis cache
+		 -->
+		<!-- <dependency>
+		    <groupId>net.sf.ehcache</groupId>
+		    <artifactId>ehcache</artifactId>
+		</dependency> -->
+		<dependency>
+		    <groupId>org.springframework.boot</groupId>
+		    <artifactId>spring-boot-starter-data-redis</artifactId>
+		</dependency>
+		
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+		</dependency>
+	</dependencies>
+</project>
