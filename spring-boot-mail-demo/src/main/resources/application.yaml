@@ -1,0 +1,12 @@
+spring:
+    mail:
+        host: smtp.sina.com
+        username: aimysaber@sina.com
+        password: loveSABEReiIN`~
+        properties: 
+            mail:
+                smtp:
+                    auth: true
+                    starttls: 
+                        enable: true
+                        required: true 

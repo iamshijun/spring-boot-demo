@@ -42,5 +42,6 @@
 		<module>spring-boot-jdbc-demo</module>
 		<module>spring-boot-logging-demo</module>
 		<module>spring-boot-cache-demo</module>
+		<module>spring-boot-mail-demo</module>
 	</modules>
 </project>
